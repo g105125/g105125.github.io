@@ -9,8 +9,10 @@ jobs:
     steps:
       - name: 拉取代码
         uses: actions/checkout@v4
-      - name: install proselint
-        run: sudo apt install python3-proselint
+      - name: 更新库
+        run: sudo apt update
+      - name: 安装shellcheck
+        run: sudo apt install shellcheck
       - name: 检查
-        run: find . -name "*.md" -exec proselint {} +
+        run: find . -name "*.sh" -exec shellcheck {} +
   
