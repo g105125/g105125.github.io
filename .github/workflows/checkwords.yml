@@ -1,1 +1,18 @@
+name:checkwords
 
+on:
+  push:
+    branches:
+    - main
+jobs:
+  job1:
+    name:check
+    runs-on:ubuntu-latest
+    steps:
+      - name:拉取代码
+        uses:actions/checkout@v4
+      - name:install proselint
+        run: pip install proselin
+      - name:检查
+        run: find . -name "*.md" -exec proselint {} +
+  
