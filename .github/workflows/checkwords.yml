@@ -10,7 +10,7 @@ jobs:
       - name: 拉取代码
         uses: actions/checkout@v4
       - name: install proselint
-        run: pip install proselin
+        run: sudo apt install python3-proselint
       - name: 检查
         run: find . -name "*.md" -exec proselint {} +
   
