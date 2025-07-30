@@ -1,5 +1,3 @@
-name:checkwords
-
 on:
   push:
     branches:
